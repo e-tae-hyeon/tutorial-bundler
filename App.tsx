@@ -1,6 +1,7 @@
 import React from "react";
 import { emojis } from "./emoji";
 import { format } from "date-fns";
+import "./style.css";
 
 const App = () => {
   const [selectedEmoji, setSelectedEmoji] = React.useState(emojis[0]);

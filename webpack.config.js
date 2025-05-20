@@ -25,6 +25,13 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/, // .css 파일을 처리해요
+        use: [
+          "style-loader", // CSS를 <style> 태그로 주입해요
+          "css-loader", // CSS를 JavaScript 모듈로 변환해요
+        ],
+      },
     ],
   },
   resolve: {
