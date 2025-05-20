@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./emoji.js":
+/***/ "./emoji.ts":
 /*!******************!*\
-  !*** ./emoji.js ***!
+  !*** ./emoji.ts ***!
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   emojis: () => (/* binding */ emojis)\n/* harmony export */ });\nconst emojis = [\n  { icon: \"😊\", name: \"Smiling Face\" },\n  { icon: \"🚀\", name: \"Rocket\" },\n  { icon: \"🍕\", name: \"Pizza\" },\n  { icon: \"🐱\", name: \"Cat\" },\n  { icon: \"🌈\", name: \"Rainbow\" },\n  { icon: \"🎸\", name: \"Guitar\" },\n];\n\n\n//# sourceURL=webpack://tutorial-bundler/./emoji.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   emojis: () => (/* binding */ emojis)\n/* harmony export */ });\nconst emojis = [\n    { icon: \"😊\", name: \"Smiling Face\" },\n    { icon: \"🚀\", name: \"Rocket\" },\n    { icon: \"🍕\", name: \"Pizza\" },\n    { icon: \"🐱\", name: \"Cat\" },\n    { icon: \"🌈\", name: \"Rainbow\" },\n    { icon: \"🎸\", name: \"Guitar\" },\n];\n\n\n//# sourceURL=webpack://tutorial-bundler/./emoji.ts?");
 
 /***/ }),
 
-/***/ "./main.js":
+/***/ "./main.ts":
 /*!*****************!*\
-  !*** ./main.js ***!
+  !*** ./main.ts ***!
   \*****************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/format.js\");\nconst { emojis } = __webpack_require__(/*! ./emoji */ \"./emoji.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const today = new Date();\n  const formattedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__.format)(today, \"MMMM d, yyyy\");\n  document.getElementById(\"dateDisplay\").textContent = formattedDate;\n\n  showRandomEmoji();\n});\n\nfunction showRandomEmoji() {\n  const randomIndex = Math.floor(Math.random() * emojis.length);\n  const selectedEmoji = emojis[randomIndex];\n\n  document.getElementById(\"emojiDisplay\").textContent = selectedEmoji.icon;\n  document.getElementById(\"emojiName\").textContent = selectedEmoji.name;\n}\n\n\n//# sourceURL=webpack://tutorial-bundler/./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns */ \"./node_modules/date-fns/format.js\");\n/* harmony import */ var _emoji__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./emoji */ \"./emoji.ts\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n    const today = new Date();\n    const formattedDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_1__.format)(today, \"MMMM d, yyyy\");\n    document.getElementById(\"dateDisplay\").textContent = formattedDate;\n    showRandomEmoji();\n});\nfunction showRandomEmoji() {\n    const randomIndex = Math.floor(Math.random() * _emoji__WEBPACK_IMPORTED_MODULE_0__.emojis.length);\n    const selectedEmoji = _emoji__WEBPACK_IMPORTED_MODULE_0__.emojis[randomIndex];\n    document.getElementById(\"emojiDisplay\").textContent = selectedEmoji.icon;\n    document.getElementById(\"emojiName\").textContent = selectedEmoji.name;\n}\n\n\n//# sourceURL=webpack://tutorial-bundler/./main.ts?");
 
 /***/ }),
 
@@ -450,7 +450,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./main.ts");
 /******/ 	
 /******/ })()
 ;

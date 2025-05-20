@@ -1,4 +1,9 @@
-export const emojis = [
+export interface Emoji {
+  icon: string;
+  name: string;
+}
+
+export const emojis: Emoji[] = [
   { icon: "😊", name: "Smiling Face" },
   { icon: "🚀", name: "Rocket" },
   { icon: "🍕", name: "Pizza" },
