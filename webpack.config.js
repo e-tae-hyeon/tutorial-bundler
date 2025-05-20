@@ -2,7 +2,6 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "development",
   entry: "./main.tsx", // 어떤 파일을 진입점으로 번들링할지
   output: {
     filename: "bundle.js", // 번들로 만들어질 파일 이름
@@ -56,4 +55,16 @@ module.exports = {
       inject: true, // <script> 태그 자동 삽입
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"), // 빌드된 파일을 이 경로에서 서빙해요
+    },
+    port: 3000, // localhost:3000에서 실행
+    open: true, // 서버 실행 시 브라우저 자동 열기
+    hot: true, // HMR 사용
+    historyApiFallback: true, // SPA 라우팅 지원
+    client: {
+      overlay: true, // 에러 발생 시 브라우저에 띄워줘요
+    },
+  },
 };
