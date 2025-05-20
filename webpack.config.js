@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -48,4 +49,11 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"], // .tsx 확장자도 처리할 수 있게 해요
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./index.html", // 템플릿 HTML
+      filename: "index.html", // 출력될 HTML 파일 이름
+      inject: true, // <script> 태그 자동 삽입
+    }),
+  ],
 };
