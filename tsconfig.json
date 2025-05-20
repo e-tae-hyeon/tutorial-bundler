@@ -4,7 +4,9 @@
     "module": "esnext", // 모듈 시스템
     "strict": true,
     "skipLibCheck": true, // 라이브러리 타입 검사 스킵
-    "moduleResolution": "node" // 모듈이 로컬에 없으면, node_modules에서 서치
+    "moduleResolution": "node", // 모듈이 로컬에 없으면, node_modules에서 서치
+    "jsx": "react", // JSX를 React 문법으로 변환
+    "esModuleInterop": true // React를 ESM으로 import할 수 있게
   },
   "include": ["./**/*.ts"], // 컴파일러가 처리할 파일 지정
   "exclude": ["node_modules", "dist"] // 컴파일러가 무시할 파일 지정
