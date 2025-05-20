@@ -1,1 +1,32 @@
-document.addEventListener("DOMContentLoaded",(function(){const t=new Date,e=dateFns.format(t,"MMMM d, yyyy");document.getElementById("dateDisplay").textContent=e,function(){const t=Math.floor(Math.random()*emojis.length),e=emojis[t];document.getElementById("emojiDisplay").textContent=e.icon,document.getElementById("emojiName").textContent=e.name}()}));
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./main.js":
+/*!*****************!*\
+  !*** ./main.js ***!
+  \*****************/
+/***/ (() => {
+
+eval("document.addEventListener('DOMContentLoaded', function() {\n  const today = new Date();\n  const formattedDate = dateFns.format(today, 'MMMM d, yyyy');\n  document.getElementById('dateDisplay').textContent = formattedDate;\n  \n  showRandomEmoji();\n});\n\nfunction showRandomEmoji() {\n  const randomIndex = Math.floor(Math.random() * emojis.length);\n  const selectedEmoji = emojis[randomIndex];\n  \n  document.getElementById('emojiDisplay').textContent = selectedEmoji.icon;\n  document.getElementById('emojiName').textContent = selectedEmoji.name;\n}\n\n//# sourceURL=webpack://tutorial-bundler/./main.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./main.js"]();
+/******/ 	
+/******/ })()
+;
