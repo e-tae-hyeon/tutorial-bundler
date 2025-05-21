@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
   entry: "./main.tsx", // 어떤 파일을 진입점으로 번들링할지
@@ -55,6 +56,10 @@ module.exports = {
       template: "./index.html", // 템플릿 HTML
       filename: "index.html", // 출력될 HTML 파일 이름
       inject: true, // <script> 태그 자동 삽입
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "server",
+      openAnalyzer: true,
     }),
   ],
   devServer: {
