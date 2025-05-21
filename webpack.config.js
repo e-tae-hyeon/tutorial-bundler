@@ -4,8 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./main.tsx", // 어떤 파일을 진입점으로 번들링할지
   output: {
-    filename: "bundle.js", // 번들로 만들어질 파일 이름
+    filename: "[name].bundle.js", // 번들로 만들어질 파일 이름
+    chunkFilename: "[id].js",
     path: path.resolve(__dirname, "dist"), // 번들 파일이 어디에 저장될지
+    clean: true,
   },
   module: {
     rules: [
@@ -65,6 +67,27 @@ module.exports = {
     historyApiFallback: true, // SPA 라우팅 지원
     client: {
       overlay: true, // 에러 발생 시 브라우저에 띄워줘요
+    },
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      minSize: 20000,
+      // maxSize: 0,
+      maxSize: 50000,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      automaticNameDelimiter: "~",
+      // name: true,
+      name(module, chunks, cacheGroupKey) {
+        const moduleFileName = module
+          .identifier()
+          .split("/")
+          .reduceRight((item) => item);
+        const allChunksNames = chunks.map((item) => item.name).join("~");
+        return `${cacheGroupKey}-${allChunksNames}-${moduleFileName}`;
+      },
     },
   },
 };
